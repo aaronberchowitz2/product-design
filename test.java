@@ -21,22 +21,27 @@ public class test {
         bank.CloseAccount(3);
         BasicAccount a4 = new BasicAccount(4);
         bank.OpenAccount(a4);
+        System.out.println("Account ID: 1: ");
+        System.out.println(a1);
+        System.out.println("Deposit to 1 200000: ");
         a1.Deposit(200000);
+        System.out.println(a1);
+
         System.out.println("Accounts above Balance: -1999");
-        for(IAccount accountItem : bank.getAllAccountsWithBalance(-1999))
+        for(IAccount accountItem : bank.GetAllAccountsWithBalance(-1999))
             System.out.println(accountItem);
         System.out.println("Accounts above Balance: -5000");
-        for(IAccount accountItem : bank.getAllAccountsWithBalance(-5000))
+        for(IAccount accountItem : bank.GetAllAccountsWithBalance(-5000))
             System.out.println(accountItem);
         System.out.println("All accounts:");
-        for(IAccount accountItem : bank.getAllAccounts())
+        for(IAccount accountItem : bank.GetAllAccounts())
             System.out.println(accountItem);
         System.out.println("Close accounts 2,1,4:");
         bank.CloseAccount(2);
         bank.CloseAccount(1);
         bank.CloseAccount(4);
         System.out.println("All accounts:");
-        for(IAccount accountItem : bank.getAllAccounts())
+        for(IAccount accountItem : bank.GetAllAccounts())
             System.out.println(accountItem);
     }
 }

@@ -27,11 +27,11 @@ public class Bank implements IBank{
         System.out.println("There is no such account with ID: " + accountNumber + " in the bank.");
     }
 
-    public LinkedList<IAccount> getAllAccounts() {
+    public LinkedList<IAccount> GetAllAccounts() {
         return this.listAccounts;
     }
 
-    public LinkedList<IAccount> getAllAccountsInDebt() {
+    public LinkedList<IAccount> GetAllAccountsInDebt() {
         LinkedList<IAccount> listAccountsInDebt = new LinkedList<IAccount>();
         for (IAccount account : this.listAccounts) {
             if (account.GetCurrentBalance() < 0) {
@@ -41,7 +41,7 @@ public class Bank implements IBank{
         return listAccountsInDebt;
     }
 
-    public LinkedList<IAccount> getAllAccountsWithBalance(double balanceAbove) {
+    public LinkedList<IAccount> GetAllAccountsWithBalance(double balanceAbove) {
         LinkedList<IAccount> listAccountsAboveBalance = new LinkedList<IAccount>();
         for (IAccount account : this.listAccounts) {
             if (account.GetCurrentBalance() > balanceAbove) {
